@@ -1,0 +1,45 @@
+# Design Rules
+
+Follow these rules across this project:
+
+- **Direction**: Clean, professional admin-portal look (like a modern internal tool). NO animations, NO transitions, NO gradients, NO shadows, NO glow, NO emojis, NO icon libraries.
+- **Font**: Inter font family (`@fontsource/inter` weights 400, 500, 600 imported in `main.jsx`). Use Inter everywhere, base size 14px, line-height 1.5, headings weight 600.
+- **Colors (CSS variables in `index.css`)**:
+  - `--bg`: `#F6F7F9` (page background)
+  - `--surface`: `#FFFFFF` (cards, tables, modals)
+  - `--border`: `#E3E6EA`
+  - `--text`: `#1A1F2B`
+  - `--muted`: `#6B7280`
+  - `--primary`: `#1E4FD8`
+  - `--primary-dark`: `#1A43B8`
+  - `--danger`: `#C0392B`
+  - Body background `var(--bg)`, text `var(--text)`.
+- **Buttons** (global classes `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-danger`, `.btn-sm`):
+  - Height 36px (small 28px), radius 6px, 14px weight 500, padding 0 14px (small 0 10px).
+  - Primary: solid primary, white text.
+  - Secondary: white, 1px border, dark text.
+  - Danger: white, 1px red border, red text.
+  - Disabled: `#F3F4F6` background with muted text.
+  - Hover: plain background change only (no animations, transitions, or shadows).
+  - Apply these classes to every existing button in the project.
+- **Forms** (global styles for `label`, `input`, `select`, `textarea`):
+  - `label` above input, 13px weight 500.
+  - inputs 38px high (textarea auto), 1px border, 6px radius, white background.
+  - focus = 2px solid primary outline, no glow.
+  - Error text class `.error-text`: 13px, danger color.
+- **Status Badge** (`components/StatusBadge.jsx`):
+  - Small pill (radius 999px, padding 2px 10px, 12px, weight 500) with tinted background and darker text of the same hue:
+    - green: `AVAILABLE`, `GOOD`, `RETURNED`, `COMPLETED`
+    - blue: `ISSUED`, `IN_PROGRESS`
+    - amber: `PENDING`, `RETURN_REQUESTED`, `FAIR`, `OPEN`
+    - red: `REJECTED`, `NEEDS_REPAIR`, `OVERDUE`
+    - grey: `CANCELLED`, `RETIRED`, `IN_MAINTENANCE`
+  - Status text displayed with underscores replaced by spaces.
+- **Modal** (`components/Modal.jsx`):
+  - White box, 8px radius, max-width 520px.
+  - Header row with title + "Close" text button.
+  - 1px divider between header and body.
+  - Body padding 20px.
+  - Footer area with right-aligned buttons.
+  - Plain dark overlay at 40% opacity (`rgba(0, 0, 0, 0.4)`).
+  - No animation.
